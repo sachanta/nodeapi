@@ -1,4 +1,7 @@
 // server.js
+const initTracing = require('./tracing');
+
+initTracing().then(() => {
 const express = require("express");
 const app = express();
 app.use(function(req,res,next){setTimeout(next,1000)});
@@ -17,3 +20,4 @@ app.listen(80, () => {
   console.log("Server running on port 80");
 });
 
+});
